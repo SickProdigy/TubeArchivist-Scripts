@@ -18,29 +18,29 @@ Resulting filename and sidecar JSON:
 
 ## How it works / Usage
 1. Put all the scripts in the directory with your video files (scripts currently do not recurse into subdirectories).
-2. Run them in order from the directory containing your media:
-
-```sh
-bash convert-()-to-[].bash
-bash move-[id]-to-end.bash
-bash create-json-alongside.bash
-bash insert-id-into-json.bash
-bash insert-title-into-json.bash
-bash insert-date-into-json.bash
-```
+2. Edit 'Example.info.json'
+  Update these lines
+    - "channel_id": "Change To Channel ID/username",
+    - "uploader": "Youtube Username",
+    - "uploader_id": "Change To Channel ID",
+    - "uploader_url": "https://www.youtube.com/channel/ChangeToChannelID-or-username",
+3. Run the scripts in order from the directory containing your media below:
 
 Each script performs a single transformation so you can inspect results between steps.
 
----
-
 ## Scripts (order and purpose)
-1. `convert-()-to-[].bash`  
+1a. `convert-()-to-[].bash`  
    - Replace parentheses containing an ID with square brackets (e.g. `(ID)` -> `[ID]`) and clean spacing.
+   - If already have id at end skip to 3. 
 
-2. `move-[id]-to-end.bash`  
+1b. `move-find-id-to-end-filename.bash`
+   - Split filename into parts. Find id between second and third " - " without brackets, adds backets, moves [id] to end of filename before extension.
+   - Skip 1a/2a, straight to 3.
+
+2a. `move-[id]-to-end-filename.bash`  
    - Ensure the video ID appears at the end of the filename inside square brackets.
 
-3. `create-json-alongside.bash`  
+3. `create-json-alongside-each-file.bash`  
    - Create an empty `.info.json` file for each video filename (sidecar).
 
 4. `insert-id-into-json.bash`  
