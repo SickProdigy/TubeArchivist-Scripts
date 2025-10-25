@@ -10,6 +10,7 @@ Normalize filenames and create accompanying metadata (.info.json) so TubeArchivi
 Example input filename:
 - Example A: `20170311 (5XtCZ1Fa9ag) Terry A Davis Live Stream.mp4`
 - Example B: `20131003 - 001 - 1okW1RTPZ7Q - TempleOS Hymns #1.mp4`
+
 Resulting filename and sidecar JSON:
 - Example A: 
   - `20170311 Terry A Davis Live Stream [5XtCZ1Fa9ag].mp4`
