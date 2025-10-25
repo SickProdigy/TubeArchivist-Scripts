@@ -80,3 +80,7 @@ curl -X POST "http://es:9200/ta_channel/_search?pretty" \
   }
 }'
 ```
+
+You should get back an example like this: [ Example-channel-info-elasticsearch.json](Example-channel-info-elasticsearch.json)
+
+I'm using this as an example to update channels in TubeArchivist that are missing data. I wish kibana would let me do it. Maybe I can Just haven't figured it out yet. 
