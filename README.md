@@ -8,12 +8,15 @@ Small collection of Bash helpers used to prepare offline / archived YouTube vide
 Normalize filenames and create accompanying metadata (.info.json) so TubeArchivist can ingest local archives (especially those from archive.org or other offline sources).
 
 Example input filename:
-`20170311 (5XtCZ1Fa9ag) Terry A Davis Live Stream.mp4`
-
+- Example A: `20170311 (5XtCZ1Fa9ag) Terry A Davis Live Stream.mp4`
+- Example B: `20131003 - 001 - 1okW1RTPZ7Q - TempleOS Hymns #1.mp4`
 Resulting filename and sidecar JSON:
-- `20170311 Terry A Davis Live Stream [5XtCZ1Fa9ag].mp4`
-- `20170311 Terry A Davis Live Stream [5XtCZ1Fa9ag].info.json`
-
+- Example A: 
+  - `20170311 Terry A Davis Live Stream [5XtCZ1Fa9ag].mp4`
+  - `20170311 Terry A Davis Live Stream [5XtCZ1Fa9ag].info.json`
+- Example B:
+  - `20131003 - 001 - TempleOS Hymns #1 [1okW1RTPZ7Q].mp4`
+  - `20131003 - 001 - TempleOS Hymns #1 [1okW1RTPZ7Q].info.json`
 ---
 
 ## How it works / Usage
