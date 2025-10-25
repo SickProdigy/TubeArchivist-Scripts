@@ -59,6 +59,7 @@ Each script performs a single transformation so you can inspect results between 
 - Always test on a copy or run a subset first to confirm behavior.
 - If filenames contain unusual characters, run a quick grep for non-ASCII prior to processing.
 - Modify scripts to add dry-run mode if you want safer previews.
+- ElasticSearch Common Commands for updates: https://gitea.rcs1.top/sickprodigy/TubeArchivist-Scripts/src/branch/main/ElasticSearch-Common-Commands.md
 
 ---
 
