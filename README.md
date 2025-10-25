@@ -23,10 +23,10 @@ Resulting filename and sidecar JSON:
 ## How it works / Usage
 1. Put all the scripts in the directory with your video files (scripts currently do not recurse into subdirectories).
 2. Edit 'Example.info.json'
-   - Update these lines (And also any other lines you want copied to each video)
+   - Update these lines (And also any other lines you want copied to each video that won't be scripted in. Null values I didn't have data for yet.)
  ``` 
-"channel_id": "Change To Channel ID/username",
-"uploader": "Youtube Username",
+"channel_id": "Change to Youtube Username",
+"uploader": "Change to Youtube Username",
 "uploader_id": "Change To Channel ID",
 "uploader_url": "https://www.youtube.com/channel/ChangeToChannelID-or-username",
 ```
@@ -40,7 +40,7 @@ Each script performs a single transformation so you can inspect results between 
    - If already have id at end skip to 3. 
 
 1b. `move-find-id-to-end-filename.bash`
-   - Split filename into parts. Find id between second and third " - " without brackets, adds backets, moves [id] to end of filename before extension.
+   - Split filename into parts. Find video id between second and third " - " without brackets, adds backets, moves [id] to end of filename before extension.
    - Skip 1a/2a, straight to 3.
 
 2a. `move-[id]-to-end-filename.bash`  
@@ -56,13 +56,13 @@ Each script performs a single transformation so you can inspect results between 
    - Insert the cleaned title into the sidecar JSON.
 
 6. `insert-date-into-json.bash`  
-   - Insert the date (if available) into the sidecar JSON.
+   - Insert the date from filename (if available) into the sidecar JSON.
 
 ---
 
 ## Notes and tips
 - Scripts do not process subdirectories. Run at the directory root for each archive.
-- Always test on a copy or run a subset first to confirm behavior.
+- Always test on a copy or run a subset first to confirm behavior. 
 - If filenames contain unusual characters, run a quick grep for non-ASCII prior to processing.
 - Modify scripts to add dry-run mode if you want safer previews.
 - ElasticSearch Common Commands for updates: [ElasticSearch Common Commands](ElasticSearch-Common-Commands.md)
@@ -72,9 +72,5 @@ Each script performs a single transformation so you can inspect results between 
 ## Example archive
 Archive used for testing:  
 `https://archive.org/details/TempleOS-TheMissingVideos`
-
-Processed example (after running full pipeline):  
-`20170311 Terry A Davis Live Stream [5XtCZ1Fa9ag].mp4`  
-`20170311 Terry A Davis Live Stream [5XtCZ1Fa9ag].info.json`
 
 ---
