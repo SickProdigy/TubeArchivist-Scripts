@@ -19,11 +19,13 @@ Resulting filename and sidecar JSON:
 ## How it works / Usage
 1. Put all the scripts in the directory with your video files (scripts currently do not recurse into subdirectories).
 2. Edit 'Example.info.json'
-  Update these lines
-    - "channel_id": "Change To Channel ID/username",
-    - "uploader": "Youtube Username",
-    - "uploader_id": "Change To Channel ID",
-    - "uploader_url": "https://www.youtube.com/channel/ChangeToChannelID-or-username",
+   - Update these lines (And also any other lines you want copied to each video)
+ ``` 
+"channel_id": "Change To Channel ID/username",
+"uploader": "Youtube Username",
+"uploader_id": "Change To Channel ID",
+"uploader_url": "https://www.youtube.com/channel/ChangeToChannelID-or-username",
+```
 3. Run the scripts in order from the directory containing your media below:
 
 Each script performs a single transformation so you can inspect results between steps.
